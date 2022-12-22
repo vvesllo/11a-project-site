@@ -1,0 +1,66 @@
+{% extends 'custom_base.html' %}
+
+
+{% block title %}
+	{% if data %}
+		{{ data["title"] }}
+	{% else %}
+		Список теорий
+	{% endif %}
+{% endblock %}
+
+
+{% block content %}
+<div class="theory-grid">
+	{% if data %}    
+		<div class="theory-menu-container theory-container">
+			<div class="theory-menu">
+				<div>
+					<h3 style="text-align: center;">Список теории:</h3>
+					<ol>
+					{% for item in l %}
+						<li>
+							{% if item["content"] | length != 0 %}
+								<a href="/theory/{{ urls[loop.index-1] }}">{{ item["title"] }}</a>
+							{% else %}
+								<span>{{ item["title"] }}</span>
+							{% endif %}
+							<!-- <a href="/theory/{{ urls[loop.index-1] }}">{{ item["title"] }}</a> -->
+						</li>
+					{% endfor %}
+					</ol>
+				</div>
+			</div>
+		</div>
+		<div class="theory-container">
+			{{ data["content"] | safe }}
+			<div class="theory-tt-desktop">
+				<a href="/test/{{ title }}">
+					<button class="theory-to-test">Решить тест по этой теме</button>
+				</a>
+			</div>
+		</div>
+	{% else %}
+		<div class="theory-container theory-full-container">
+			<div>
+				<h3>Список теории:</h3>
+				<ol>
+				{% for item in l %}
+					<li>
+						{% if item["content"] | length != 0 %}
+							<a href="/theory/{{ urls[loop.index-1] }}">{{ item["title"] }}</a>
+						{% else %}
+							<span>{{ item["title"] }}</span>
+						{% endif %}
+						<!-- <a href="/theory/{{ urls[loop.index-1] }}">{{ item["title"] }}</a> -->
+					</li>
+				{% endfor %}
+				</ol>
+			</div>
+		</div>
+	{% endif %}
+</div>
+{% endblock %}
+
+
+

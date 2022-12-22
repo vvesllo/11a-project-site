@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}{% endblock %} - 11A</title>
+	
+	<script src="{{url_for('static', filename='script.js')}}"></script>
+	
+	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='theory.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='block.css') }}">
+<!-- 
+	<link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+ -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='media.css') }}">
+
+</head>
+<body>
+	{% block header %}
+
+	{% endblock %}
+	{% block content %}
+	
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends 'custom_base.html' %}
+
+
+{% block title %}
+Тест
+{% endblock %}
+
+{% block content %}
+<div class="test-container">
+	<h1>{{ data["title"] }}</h1>
+	<form action="{{ url_for('check_test') }}" method="post">
+		{% if data["tests-type"] in ("checkbox", "radio") %}
+			{% for test in data["tests"] %}
+				<div class="test-container">
+					<strong>{{ loop.index }}. {{ test["title"] | safe }}</strong><br>
+
+					<!-- ANSWERS -->
+					
+					{% for answer in test["answers"] %}
+					    <input type="{{ data['tests-type'] }}" name="{{ data_og['tests'].index(test) }}" value="{{ loop.index }}">{{ answer }}</input><br>
+					{% endfor %}
+				</div>
+				<br>
+				<!-- END ANSWERS -->
+			{% endfor %}
+		{% else %}
+			{% for test in data["tests"] %}
+				<div class="test-container">
+					
+					<strong>{{ loop.index }}. {{ test["title"] | safe }}</strong>
+
+					<!-- ANSWERS -->
+					<ol>
+						{% for answer in test["answers"] %}
+							<li>{{ answer }}</li>
+						{% endfor %}
+					</ol>
+					Ответ: <input type="text" name="{{ data_og['tests'].index(test) }}">{{ answer }}</input>
+				</div>
+				<br>
+				<!-- END ANSWERS -->
+			{% endfor %}
+		{% endif %}
+		<input type="submit" name="{{title}}" value="Завершить"/>
+	</form>
+</div>
+{% endblock %}
+

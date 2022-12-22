@@ -1,0 +1,50 @@
+.theory-grid {
+	display: grid;
+	grid-template-columns: 2fr 5fr;
+	grid-column-gap: 1em;
+	grid-row-gap: 1em;
+}
+
+.theory-container {
+	padding: 0 10px 0;
+	padding-bottom: 1em;
+	padding-top: 1em;
+	background-image: linear-gradient(45deg, #C9D6FF6f, #E2E2E26f);
+	border-radius: 10px;
+	box-shadow: 0 5px 15px #0004;
+}
+
+.theory-block {
+	padding: 10px;
+	margin: 10px 0 10px;
+	background-image: linear-gradient(45deg, #C9D6FF6f, #E2E2E26f);
+	border-radius: 10px;
+	box-shadow: 0 5px 10px #0004;
+}
+
+.theory-full-container {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.theory-menu {
+	width: 20%;
+	position: fixed;
+	padding: 10px;
+	margin: 10px 0 10px;
+	background-image: linear-gradient(45deg, #C9D6FF6f, #E2E2E26f);
+	border-radius: 10px;
+	box-shadow: 0 5px 10px #0004;
+}
+.theory-to-test {
+	background-image: linear-gradient(45deg, #C9D6FF, #E2E2E2);
+	font-size: 30px;
+	padding: 10px;
+	border: 0px;
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.theory-menu-container {
+	display: flex;
+	justify-content: center;
+}

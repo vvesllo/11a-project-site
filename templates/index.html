@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Главная
+{% endblock %}
+
+{% block content %}
+<article id="index-main-article">
+	<div class="index-grid">
+		<div class="index-main-container index-container">
+			<div class="index-logo">
+				<svg class="center" height="150" viewBox="0 0 240 240" preserveAspectRatio="xMaxYMax meet">
+					{{ logo_svg }}
+				</svg>
+			</div>
+				<span style="font-size: 1.6em; margin-top: 5px; color: rgb(0, 6, 157); text-size-adjust: 100%">
+					<strong>Виртуальный учебник</strong><br>
+					<strong>мастер подготовки к экзамену</strong>
+				</span>
+			<div>
+				<h1>
+					Дорогие ученики!
+				</h1>
+				<p>
+					Вас приветствует скромная команда учащихся 11-го класса, чтобы представить свой проект, направленный помочь вам в подготовке к Единому Государственному Экзамену по русскому языку.
+				</p>
+				<p>
+					Данная работа потребовала 10 участников и 2 года тяжелой работы, но сейчас мы с гордостью представляем вам наш сайт. Используя функционал нашего сайта вы можете гораздо эффективнее подготовиться к экзамену, ведь у нас собраны: вся теория которая может пригодится вам, с пояснением и примерами и тесты, созданные на основе ЕГЭ, для того чтобы проверить ваши знания материала.
+				</p>
+			</div>
+		</div>
+		<div class="index-block index-container">
+			<div class="index-svg-container">
+				<svg class="center" width="110" height="145" viewBox="0 0 193 227" preserveAspectRatio="xMaxYMax meet">
+					{{ book_svg }}
+				</svg>
+			</div>
+			<div class="index-h1">
+				<h1><a href="/theory">Теория</a></h1>
+			</div>
+			<div class="index-subtext">
+				<p>
+					Данный раздел предназначен для того чтобы держать в одном списке всю возможную полезную информацию, для решения заданий из ЕГЭ. Вы можете повторить или выучить тут те темы которые вы не знали до этого.
+				</p>
+			</div>
+		</div>
+		<div class="index-block index-container">
+			<div class="index-svg-container">
+				<svg class="center" width="110" height="145" viewBox="0 0 227 227">
+					{{ mans_svg }}
+				</svg>
+			</div>
+			<div class="index-h1">
+				<h1><a href="/about">О проекте</a></h1>
+			</div>
+			<div class="index-subtext">
+				<p>
+					Содержит информацию о распределении обязанностей и паспорт проекта. Не самая важная информация для ученика.
+				</p>
+			</div>
+		</div>
+		<div class="index-block index-container">
+			<div class="index-svg-container">
+				<svg class="center" width="100" viewBox="0 0 200 180">
+					{{ feather_svg }}
+				</svg>
+			</div>
+			<div class="index-h1">
+				<h1><a href="/tests-list">Тесты</a></h1>
+			</div>
+			<div class="index-subtext">
+				<p>
+					Данный раздел создавался для проверки ваших способностей на основе реальных заданий из ЕГЭ. Чтобы конкретно ты смог(-ла) узнать какие темы следует повторить.
+				</p>
+			</div>
+		</div>
+		<div>
+			<svg class="index-boy_svg" viewBox="0 0 568 750">
+				{{ boy_svg }}
+			</svg>
+		</div>
+	</div>
+</article>
+{% endblock %}
+

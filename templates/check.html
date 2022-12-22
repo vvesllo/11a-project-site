@@ -1,0 +1,63 @@
+{% extends 'custom_base.html' %}
+
+
+{% block title %}
+Результаты
+{% endblock %}
+
+{% block content %}
+	<div class="test-container">
+		<table style="max-width: 500px;">
+			<tr class="table_title">
+				<td>Задание</td>
+				<td>Ответ</td>
+				<td>Правильный ответ</td>
+			</tr>
+			{% for id in tests_ids %}
+			<tr>	
+				<td><a href="#{{ loop.index }}">{{ loop.index }}</a></td>
+				{% if user_answers[id] == tests[id]["correct"] %}
+					<td class="correct">{{ user_answers[id] }}</td>
+				{% else %}
+					<td class="uncorrect">{{ user_answers[id] }}</td>
+				{% endif %}
+				<td>{{ tests[id]["correct"] }}</td>
+			</tr>
+			{% endfor %}
+			    
+		</table>
+	<p>
+		<strong>Процент выполнения: {{ result }}%</strong>
+	</p>
+	</div>
+
+	<hr>
+	<div class="test-container">
+		<ol>
+			{% for id in tests_ids %}
+				<section id="{{ loop.index }}">
+					<li><strong>{{ tests[id]["title"] | safe }}</strong></li>
+					<ol>
+						{% for answer in tests[id]["answers"] %}
+							<li>{{ answer }}</li>
+						{% endfor %}
+					</ol>
+					<strong>Правильный ответ: {{ tests[id]["correct"] }} | Ваш ответ: {{ user_answers[id] }}</strong>
+				</section>
+			{% endfor %}
+		</ol>
+	</div>
+	{% if result != 100 %}
+	   	<p>
+	   		<strong>
+	   			Теория по этой теме:
+	   		</strong>
+	   	</p>
+	    <hr>
+	    <article>
+	    	{{ theory | safe }}
+	    </article>
+	{% endif %}
+	    
+{% endblock %}
+
